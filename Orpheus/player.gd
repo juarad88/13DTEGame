@@ -19,8 +19,22 @@ func _physics_process(delta):
 	#player movement
 	get_input()
 	move_and_slide()
+	#limit movement to window size
+	position = position.clamp(Vector2.ZERO, screen_size)
 	
-
+	#player rotation
+	var mouse = get_local_mouse_position()
+	var angle = snappedf(mouse.angle(), PI / 4) / (PI/4)
+	angle = wrapi(int(angle), 0, 8)
+	
+	$AnimatedSprite2D.animation = "walk" + str(angle)
+	
+	#player animation
+	if velocity.length() != 0:
+		$AnimatedSprite2D.play()
+	else:
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.frame = 1
 
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
