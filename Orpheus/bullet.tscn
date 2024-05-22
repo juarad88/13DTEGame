@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5ci0ym3ect6u"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_8jv3w"]
+[ext_resource type="Texture2D" uid="uid://d2jvvd4c8fvvs" path="res://Sprites/New Piskel (4).png" id="2_kpemk"]
+
+[node name="Bullet" type="Area2D"]
+rotation = 0.785398
+script = ExtResource("1_8jv3w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_kpemk")

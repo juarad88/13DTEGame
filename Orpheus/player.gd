@@ -3,12 +3,19 @@ extends CharacterBody2D
 var speed : int
 var screen_size : Vector2
 
+@onready var bullet_scene = preload("res://bullet.tscn")
+
 func _ready():
 	screen_size = get_viewport_rect().size
 	position = screen_size/ 2
 	speed = 200
 
 
+func shoot():
+	var bullet = bullet_scene.instantiate() #create a bullet
+	get_parent().add_child(bullet) #add the bullet to the scene
+	bullet.global_position = global_position #set the bullet position
+	bullet.look_at(get_global_mouse_position()) #rotate bullet to look at mouse
 
 func get_input():
 	#keyboard input
@@ -18,9 +25,10 @@ func get_input():
 func _physics_process(delta):
 	#player movement
 	get_input()
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
 	move_and_slide()
-	#limit movement to window size
-	position = position.clamp(Vector2.ZERO, screen_size)
+	
 	
 	#player rotation
 	var mouse = get_local_mouse_position()
