@@ -9,3 +9,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	translate(transform.x * 20) # move along x axis by 10 pixels per second
+
+
+
+func _on_body_entered(body):
+	if body.is_in_group("Enemy"):
+		body.take_damage()
