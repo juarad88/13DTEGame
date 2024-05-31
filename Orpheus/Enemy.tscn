@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Enemy.gd" id="1_xl2at"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhhxa"]
-size = Vector2(12, 12)
+size = Vector2(16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3nhmc"]
 atlas = ExtResource("1_l5g7h")
@@ -142,7 +142,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yr2lk"]
-radius = 82.0975
+radius = 150.213
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(4, 4)

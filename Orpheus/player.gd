@@ -10,7 +10,6 @@ func _ready():
 	position = screen_size/ 2
 	speed = 200
 
-
 func shoot():
 	var bullet = bullet_scene.instantiate() #create a bullet
 	get_parent().add_child(bullet) #add the bullet to the scene
