@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 #From Tutorial 
 @export var speed = 25
 #see if enemy should chase player
