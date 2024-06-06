@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0asbciolripx"]
+[gd_scene load_steps=7 format=3 uid="uid://c0asbciolripx"]
 
 [ext_resource type="Texture2D" uid="uid://b5lkueas6fw5l" path="res://Environment/atlas_32x.png" id="1_kb4mf"]
 [ext_resource type="PackedScene" uid="uid://n6hyc4h8twcu" path="res://player.tscn" id="2_vy67u"]
 [ext_resource type="PackedScene" uid="uid://cgvgbh1ukyoca" path="res://Enemy.tscn" id="3_8c0s6"]
+[ext_resource type="PackedScene" uid="uid://cs1jreihjyyqa" path="res://enemy_spawner.tscn" id="4_dp5pb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jgb52"]
 texture = ExtResource("1_kb4mf")
@@ -3537,3 +3538,6 @@ position = Vector2(-952, 328)
 
 [node name="Enemy11" parent="Enemies" instance=ExtResource("3_8c0s6")]
 position = Vector2(-880, 480)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("4_dp5pb")]
+position = Vector2(4352, -2000)
