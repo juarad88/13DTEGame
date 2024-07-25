@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 #From Tutorial 
-@export var speed = 250
+@export var speed = 50
 #see if enemy should chase player
 var player_chase = false
 @onready var player = get_tree().get_first_node_in_group("Player")
@@ -17,7 +17,6 @@ func _physics_process(delta):
 
 #Is player inside detection area
 func _on_detection_area_body_entered(body):
-	
 	player_chase = true
 
 #func _on_detection_area_body_exited(body):

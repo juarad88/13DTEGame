@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://1s3ry5dcluyr"]
+
+[ext_resource type="Texture2D" uid="uid://cdx7x2kbma34l" path="res://icon.svg" id="1_31mys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcvxt"]
+size = Vector2(128, 128)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5fxmn"]
+polygon = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[node name="Sprite2D" type="Sprite2D"]
+light_mask = 3
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_31mys")
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 3
+visibility_layer = 3
+shape = SubResource("RectangleShape2D_dcvxt")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_5fxmn")

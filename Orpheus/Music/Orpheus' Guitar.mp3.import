@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6jq0e3mhwk4s"
+path="res://.godot/imported/Orpheus' Guitar.mp3-6bf882328aba3066c27256c272c6422f.mp3str"
+
+[deps]
+
+source_file="res://Music/Orpheus' Guitar.mp3"
+dest_files=["res://.godot/imported/Orpheus' Guitar.mp3-6bf882328aba3066c27256c272c6422f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

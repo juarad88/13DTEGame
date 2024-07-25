@@ -8,7 +8,7 @@ var screen_size : Vector2
 func _ready():
 	screen_size = get_viewport_rect().size
 	position = screen_size/ 2
-	speed = 200
+	speed = 100
 
 func shoot():
 	var bullet = bullet_scene.instantiate() #create a bullet
@@ -27,7 +27,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 	move_and_slide()
-	
+	$LightPivot.look_at(get_global_mouse_position())
 	
 	#player rotation
 	var mouse = get_local_mouse_position()
