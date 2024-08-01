@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var Enemy_scene = preload("res://Enemy.tscn")
+@onready var Enemy_scene = preload("res://Scenes/Enemy.tscn")
 var count = 51
 @onready var spawn_location = $spawn_location
 @onready var area = $Area2D

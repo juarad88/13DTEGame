@@ -13,7 +13,11 @@ config_version=5
 config/name="Orpheus"
 run/main_scene="res://under_world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/icon.svg"
+
+[autoload]
+
+Events="*res://dialog/events.gd"
 
 [display]
 
