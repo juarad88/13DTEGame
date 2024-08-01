@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0asbciolripx"]
+[gd_scene load_steps=8 format=3 uid="uid://c0asbciolripx"]
 
 [ext_resource type="Script" path="res://under_world.gd" id="1_uknkn"]
 [ext_resource type="PackedScene" uid="uid://n6hyc4h8twcu" path="res://player.tscn" id="2_vy67u"]
 [ext_resource type="PackedScene" uid="uid://1s3ry5dcluyr" path="res://sprite_2d.tscn" id="4_7828j"]
 [ext_resource type="PackedScene" uid="uid://cs1jreihjyyqa" path="res://enemy_spawner.tscn" id="4_dp5pb"]
-[ext_resource type="AudioStream" uid="uid://bjuy8w8jd47ws" path="res://Music/Empty Streets.mp3" id="5_r1x60"]
+[ext_resource type="AudioStream" uid="uid://b6jq0e3mhwk4s" path="res://Music/Orpheus' Guitar.mp3" id="5_r1x60"]
 [ext_resource type="PackedScene" uid="uid://bcl4xjxfvdu8o" path="res://dialog/npc_dialog_box.tscn" id="6_5by0x"]
+
+[sub_resource type="TileSet" id="TileSet_1qr46"]
 
 [node name="UnderWorld" type="Node2D"]
 script = ExtResource("1_uknkn")
@@ -58,5 +60,9 @@ autoplay = true
 
 [node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("6_5by0x")]
 offset_top = -286.0
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_1qr46")
+format = 2
 
 [editable path="CanvasLayer/MarginContainer"]
