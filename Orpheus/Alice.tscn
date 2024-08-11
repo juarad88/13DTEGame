@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://t10f4rnipely"]
+
+[ext_resource type="Script" path="res://Alice.gd" id="1_4ytab"]
+[ext_resource type="Texture2D" uid="uid://cdx7x2kbma34l" path="res://Sprites/icon.svg" id="2_ltoxr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1lq3a"]
+radius = 8.0
+
+[node name="Alice" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_4ytab")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ltoxr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1lq3a")

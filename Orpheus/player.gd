@@ -4,10 +4,14 @@ var speed : int
 var screen_size : Vector2
 
 @onready var bullet_scene = preload("res://bullet.tscn")
+@onready var all_interactions = []
+@onready var interactLabel = $"Interaction components/CanvasLayer/InteractLabel" 
+
+
 
 func _ready():
-	screen_size = get_viewport_rect().size
-	position = screen_size/ 2
+	#screen_size = get_viewport_rect().size
+	#position = screen_size/ 2
 	speed = 100
 
 func shoot():
@@ -50,3 +54,25 @@ func kill():
 func _on_area_2d_body_entered(body):
 	if "Enemy" in body.name:
 		kill()
+
+
+
+#Interaction methods - followed tutorial
+#################################################
+
+#11:43 continue watching#################################
+
+func _on_intercaction_area_area_entered(area):
+	all_interactions.insert(0, area)
+	update_interactions()
+
+
+func _on_intercaction_area_area_exited(area):
+	all_interactions.erase(area)
+	update_interactions()
+	
+func update_interactions():
+	if all_interactions:
+		interactLabel.text = all_interactions[0].interact_label
+	else:
+		interactLabel.text = "" 
