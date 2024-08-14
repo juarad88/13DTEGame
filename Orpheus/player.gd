@@ -13,6 +13,8 @@ func _ready():
 	#screen_size = get_viewport_rect().size
 	#position = screen_size/ 2
 	speed = 100
+	update_interactions()
+	$AudioStreamPlayer2D.play()
 
 func shoot():
 	var bullet = bullet_scene.instantiate() #create a bullet
@@ -56,15 +58,37 @@ func _on_area_2d_body_entered(body):
 		kill()
 
 
+func talk_to_alice():
+	$RockMusic.play()
+	Events.emit_signal("request_show_dialog","Alice?",preload("res://dialog/KeanuReevesCop.png"),true)
+	await Events.dialog_finished
+	Events.emit_signal("request_show_dialog","Help......Me....",preload("res://dialog/1227-girl, pixel art, JRPG portrait,  looking-wyvernmix15XL_xlV32-1687691233.png"),true)
+	await Events.dialog_finished
+	Events.emit_signal("request_show_dialog","Help? What's wrong?",preload("res://dialog/KeanuReevesCop.png"),true)
+	await Events.dialog_finished
+	Events.emit_signal("request_show_dialog","The monsters...They're..coming",preload("res://dialog/1227-girl, pixel art, JRPG portrait,  looking-wyvernmix15XL_xlV32-1687691233.png"),true)
+	await Events.dialog_finished
+	Events.emit_signal("request_show_dialog","Monsters?",preload("res://dialog/KeanuReevesCop.png"),true)
+	await Events.dialog_finished
 
 #Interaction methods - followed tutorial
 #################################################
 
 #11:43 continue watching#################################
 
+func _process(delta):
+	if Input.is_action_just_pressed("Interact"):
+		if all_interactions:
+			if all_interactions[0].is_in_group("Alice"):
+				all_interactions[0].remove_from_group("Alice")
+				$AudioStreamPlayer2D.stop()
+				talk_to_alice()
+				
+
 func _on_intercaction_area_area_entered(area):
 	all_interactions.insert(0, area)
 	update_interactions()
+	
 
 
 func _on_intercaction_area_area_exited(area):

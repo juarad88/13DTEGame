@@ -150,7 +150,8 @@ collision_layer = 3
 script = ExtResource("1_xl2at")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 3
+light_mask = 7
+visibility_layer = 3
 shape = SubResource("RectangleShape2D_nhhxa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

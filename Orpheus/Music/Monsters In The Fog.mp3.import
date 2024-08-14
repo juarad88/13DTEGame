@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://do55wosv7qgk1"
+path="res://.godot/imported/Monsters In The Fog.mp3-3c91b0e45ab8431b65ca47ac3e74dd54.mp3str"
+
+[deps]
+
+source_file="res://Music/Monsters In The Fog.mp3"
+dest_files=["res://.godot/imported/Monsters In The Fog.mp3-3c91b0e45ab8431b65ca47ac3e74dd54.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
