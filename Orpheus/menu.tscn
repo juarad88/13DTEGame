@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://k7lba8j6i1yw"]
+[gd_scene load_steps=3 format=3 uid="uid://k7lba8j6i1yw"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_10kti"]
+[ext_resource type="Texture2D" uid="uid://ceco3w78c7cnw" path="res://Sprites/abc.png" id="2_rtybp"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -31,6 +32,10 @@ layout_mode = 2
 text = "Exit"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(952, 536)
+scale = Vector2(1.42857, 1.41667)
+texture = ExtResource("2_rtybp")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

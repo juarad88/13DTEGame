@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 #From Tutorial 
-@export var speed = 50
+@export var speed = 80
 #see if enemy should chase player
 var player_chase = false
 @onready var player = get_tree().get_first_node_in_group("Player")

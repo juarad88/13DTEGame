@@ -59,7 +59,6 @@ func _on_area_2d_body_entered(body):
 
 
 func talk_to_alice():
-	$RockMusic.play()
 	Events.emit_signal("request_show_dialog","Alice?",preload("res://dialog/KeanuReevesCop.png"),true)
 	await Events.dialog_finished
 	Events.emit_signal("request_show_dialog","Help......Me....",preload("res://dialog/1227-girl, pixel art, JRPG portrait,  looking-wyvernmix15XL_xlV32-1687691233.png"),true)
@@ -70,6 +69,8 @@ func talk_to_alice():
 	await Events.dialog_finished
 	Events.emit_signal("request_show_dialog","Monsters?",preload("res://dialog/KeanuReevesCop.png"),true)
 	await Events.dialog_finished
+	$AudioStreamPlayer2D.stop()
+	$RockMusic.play()
 
 #Interaction methods - followed tutorial
 #################################################
@@ -81,7 +82,6 @@ func _process(delta):
 		if all_interactions:
 			if all_interactions[0].is_in_group("Alice"):
 				all_interactions[0].remove_from_group("Alice")
-				$AudioStreamPlayer2D.stop()
 				talk_to_alice()
 				
 
