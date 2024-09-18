@@ -6,6 +6,7 @@ extends CharacterBody2D
 #see if enemy should chase player
 var player_chase = false
 @onready var player = get_tree().get_first_node_in_group("Player")
+@onready var blood_scene = preload("res://blood.tscn")
 
 
 func _physics_process(delta):
@@ -24,6 +25,9 @@ func _on_detection_area_body_entered(body):
 #	player_chase = false
 
 func take_damage():
+	var blood = blood_scene.instantiate()
+	get_parent().add_child(blood) 
+	blood.global_position = global_position
 	queue_free()
 
 func _on_hitbox_body_entered(body):

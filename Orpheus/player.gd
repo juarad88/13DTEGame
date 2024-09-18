@@ -55,7 +55,7 @@ func kill():
 
 func _on_area_2d_body_entered(body):
 	if "Enemy" in body.name:
-		kill()
+		get_tree().reload_current_scene()
 
 
 func talk_to_alice():
@@ -92,7 +92,7 @@ func _on_intercaction_area_area_entered(area):
 
 
 func _on_intercaction_area_area_exited(area):
-	all_interactions.erase(area)
+	all_interactions.erase(area) 
 	update_interactions()
 	
 func update_interactions():

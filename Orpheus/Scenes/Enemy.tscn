@@ -145,12 +145,15 @@ animations = [{
 radius = 150.213
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+z_index = 1
 scale = Vector2(4, 4)
 collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_xl2at")
+speed = 100
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 7
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
+light_mask = 3
 visibility_layer = 3
 shape = SubResource("RectangleShape2D_nhhxa")
 
