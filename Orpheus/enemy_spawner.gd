@@ -47,4 +47,3 @@ func _on_cooldown_timer_timeout():
 		$CooldownTimer.start()
 	else:
 		pass
-

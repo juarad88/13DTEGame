@@ -13,4 +13,3 @@ func _process(delta):
 
 func _on_timer_timeout():
 	speed_scale = 0
-
